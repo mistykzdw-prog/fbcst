@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", sans-serif;
+  color: #33493c;
+  background: linear-gradient(165deg, #f4f8f1 0%, #e3efdf 45%, #cfe3cb 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= 封面 ================= */
+
+.cover {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.cover-glow {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+}
+
+.lotus {
+  width: 210px;
+  max-width: 60vw;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.title {
+  font-family: "Noto Serif SC", "Songti SC", SimSun, serif;
+  font-size: 44px;
+  letter-spacing: 10px;
+  text-indent: 10px;
+  color: #2f5d43;
+  margin: 10px 0 14px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #5f7a68;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 22px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 34px;
+}
+
+.tag {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.75);
+  color: #3e6b4f;
+  border: 1px solid rgba(74, 124, 89, 0.25);
+}
+
+.btn-primary {
+  width: 100%;
+  max-width: 320px;
+  padding: 15px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #4a7c59, #3e6b4f);
+  color: #fff;
+  font-size: 17px;
+  letter-spacing: 6px;
+  text-indent: 6px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(62, 107, 79, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.hint {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #8ba193;
+}
+
+.hint.center {
+  text-align: center;
+}
+
+.logout {
+  color: #8ba193;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* ================= 答题页 ================= */
+
+.progress-text {
+  text-align: center;
+  color: #5f7a68;
+  font-size: 13px;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.progress-bar {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: #4a7c59;
+  transition: width 0.3s ease;
+}
+
+.question-card {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 20px;
+  padding: 28px 22px;
+  box-shadow: 0 10px 30px rgba(62, 107, 79, 0.12);
+}
+
+.question-card h2 {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #2c4636;
+  margin-bottom: 22px;
+  font-weight: 600;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option {
+  text-align: left;
+  padding: 15px 16px;
+  border-radius: 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  border: 1.5px solid #d5e4d4;
+  background: #fbfdfa;
+  color: #33493c;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.option:hover {
+  border-color: #4a7c59;
+}
+
+.option:active {
+  background: #eaf3e8;
+}
+
+/* ================= 结果页 ================= */
+
+.card {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 20px;
+  padding: 26px 22px;
+  box-shadow: 0 10px 30px rgba(62, 107, 79, 0.12);
+}
+
+.score-card {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.score-circle {
+  width: 180px;
+  height: 180px;
+}
+
+.score-num {
+  font-size: 58px;
+  font-weight: 700;
+  fill: #ffffff;
+  font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
+}
+
+.score-label {
+  font-size: 14px;
+  fill: #dcebdd;
+  letter-spacing: 6px;
+}
+
+.level-pill {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: #eaf3e8;
+  color: #3e6b4f;
+  font-size: 14px;
+  letter-spacing: 3px;
+  border: 1px solid rgba(74, 124, 89, 0.3);
+}
+
+.level-summary {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #52695c;
+  text-align: left;
+}
+
+.section-title {
+  margin: 28px 4px 12px;
+  font-size: 16px;
+  color: #2f5d43;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title::before {
+  content: "";
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: #4a7c59;
+  display: inline-block;
+}
+
+.detail-row {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.detail-row + .detail-row {
+  border-top: 1px dashed #dde9db;
+}
+
+.detail-label {
+  flex-shrink: 0;
+  color: #4a7c59;
+  font-size: 14px;
+  font-weight: 600;
+  width: 4.5em;
+}
+
+.detail-row p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #52695c;
+}
+
+.radar-caption {
+  text-align: center;
+  font-size: 13px;
+  color: #5f7a68;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.radar {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  display: block;
+}
+
+.radar-label {
+  font-size: 13px;
+  fill: #4a6b55;
+}
+
+.bars {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bar-name {
+  width: 4.5em;
+  flex-shrink: 0;
+  font-size: 13px;
+  color: #4a6b55;
+}
+
+.bar-track {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: #e4eee2;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6f9b7d, #3e6b4f);
+}
+
+.bar-score {
+  width: 2em;
+  text-align: right;
+  font-size: 13px;
+  color: #3e6b4f;
+  font-weight: 600;
+}
+
+.result .btn-primary {
+  margin-top: 28px;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding-top: 48px;
+  }
+}
